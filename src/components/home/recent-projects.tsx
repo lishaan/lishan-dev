@@ -13,6 +13,7 @@ export default function RecentProjects() {
   const [emblaRef, emblaApi] = useEmblaCarousel({}, [
     Autoplay({ delay: 15000, stopOnMouseEnter: true, stopOnInteraction: true }),
   ]);
+
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);

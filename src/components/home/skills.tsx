@@ -20,19 +20,20 @@ export default function Skills() {
         </h2>
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {categorizedSkills.map((categorizedSkill) => (
-            <div
+            <button
               key={categorizedSkill.category}
-              className={`text-sm text-zinc-950 px-4 py-2 rounded hover:cursor-pointer hover:bg-yellow-200 focus:bg-zinc-200 transition ${
+              className={`text-sm text-zinc-950 px-4 py-2 rounded hover:cursor-pointer hover:bg-yellow-200 focus:bg-yellow-200 transition ${
                 categorizedSkill.category === activeCategory.category
                   ? "bg-yellow-300"
                   : "bg-zinc-300"
               }`}
+              aria-label={`Change Category to ${categorizedSkill.category}}`}
               onClick={() => {
                 setActiveCategory(categorizedSkill);
               }}
             >
               {categorizedSkill.category}
-            </div>
+            </button>
           ))}
         </div>
         <div
