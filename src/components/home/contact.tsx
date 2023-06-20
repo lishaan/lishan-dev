@@ -94,7 +94,7 @@ export default function Contact() {
           {"Have a project in mind? I would love to hear from you!"}
         </p>
         <p className="mb-4">
-          {"Fill out the form below or directly send me an email at "}
+          {"Fill out the form below or send me a direct email at "}
           <Link
             href="mailto:lishan.dev@outlook.com"
             className="text-yellow-300 hover:text-yellow-400 transition"
