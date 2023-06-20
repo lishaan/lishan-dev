@@ -13,7 +13,7 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState(categorizedSkills[0]);
 
   return (
-    <div className="flex flex-col justify-center items-center h-full min-h-screen p-8">
+    <section className="flex flex-col justify-center items-center h-full min-h-screen p-8">
       <div className="max-w-4xl w-full text-center text-md">
         <h3 className="text-3xl md:text-4xl text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text my-10 pb-2">
           Web Development Skills
@@ -56,7 +56,7 @@ export default function Skills() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

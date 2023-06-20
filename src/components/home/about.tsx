@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="flex flex-col justify-center items-center h-full min-h-screen p-8 bg-zinc-950">
+    <section className="flex flex-col justify-center items-center h-full min-h-screen p-8 bg-zinc-950">
       <h2 className="text-5xl text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text mb-10 pb-2">
         About Me
       </h2>
@@ -21,6 +21,6 @@ export default function About() {
           }
         </p>
       </div>
-    </div>
+    </section>
   );
 }

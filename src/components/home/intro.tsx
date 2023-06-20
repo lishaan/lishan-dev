@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Intro() {
   return (
-    <div className="flex flex-col justify-center items-center h-full min-h-[calc(100vh-88px)] p-8">
+    <section className="flex flex-col justify-center items-center h-full min-h-[calc(100vh-88px)] p-8">
       <Image
         src="/avatar.jpg"
         className="rounded-full"
@@ -20,6 +20,6 @@ export default function Intro() {
         <br />
         One Line at a Time
       </h1>
-    </div>
+    </section>
   );
 }
