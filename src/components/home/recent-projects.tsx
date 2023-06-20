@@ -59,7 +59,7 @@ export default function RecentProjects() {
         Recent Projects
       </h2>
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
+        <div className="flex mx-auto max-w-2xl">
           {recentProjects.map(
             ({ name, description, url, image, technologies, hoverColor }) => {
               return (
