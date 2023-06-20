@@ -4,13 +4,14 @@ import { ChevronLeft, ChevronRight, LinkIcon } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel, { EmblaCarouselType } from "embla-carousel-react";
 
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import Link from "next/link";
 import { loader } from "@/lib/utils";
 
 export default function RecentProjects() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    // Autoplay({ delay: 5000, stopOnMouseEnter: true }),
+  const [emblaRef, emblaApi] = useEmblaCarousel({}, [
+    Autoplay({ delay: 5000, stopOnMouseEnter: true }),
   ]);
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -21,10 +22,12 @@ export default function RecentProjects() {
     () => emblaApi && emblaApi.scrollPrev(),
     [emblaApi]
   );
+
   const scrollNext = useCallback(
     () => emblaApi && emblaApi.scrollNext(),
     [emblaApi]
   );
+
   const scrollTo = useCallback(
     (index: number) => emblaApi && emblaApi.scrollTo(index),
     [emblaApi]
@@ -64,10 +67,11 @@ export default function RecentProjects() {
                   <div className="flex mx-auto max-w-4xl">
                     <div className="flex flex-col mx-auto">
                       <Image
+                        priority
                         src={image}
                         className="w-full rounded-lg mx-auto max-w-[512px] mb-4 border-2 border-zinc-700"
-                        width={1028}
-                        height={512}
+                        width={512}
+                        height={256}
                         loader={loader}
                         alt="Martline Preview"
                       />
@@ -108,18 +112,31 @@ export default function RecentProjects() {
           )}
         </div>
       </div>
+      <div className="flex justify-center items-center gap-2 mt-6">
+        {scrollSnaps.map((_, index) => (
+          <button
+            key={index}
+            className={`w-2 h-2 rounded-full ${
+              index === selectedIndex ? "bg-zinc-500" : "bg-zinc-300"
+            }`}
+            onClick={() => scrollTo(index)}
+          />
+        ))}
+      </div>
       <div className="flex items-center justify-center mt-6 gap-2">
         <button
-          className="bg-zinc-500 p-1 rounded-md"
+          className="bg-zinc-500 p-1 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Previous Project"
           onClick={scrollPrev}
+          disabled={!prevBtnEnabled}
         >
           <ChevronLeft />
         </button>
         <button
-          className="bg-zinc-500 p-1 rounded-md"
+          className="bg-zinc-500 p-1 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Next Project"
           onClick={scrollNext}
+          disabled={!nextBtnEnabled}
         >
           <ChevronRight />
         </button>
