@@ -3,14 +3,12 @@
 @tailwind utilities;
 
 body {
-  color: white;
+  /* text-zinc-50 */
+  color: rgb(250, 250, 250);
 }
 
 .bg-custom {
   background-size: 400%;
-
-  -webkit-animation: bg-animate 10s ease infinite;
-  -moz-animation: bg-animate 10s ease infinite;
   animation: bg-animate 10s ease infinite;
 }
 
