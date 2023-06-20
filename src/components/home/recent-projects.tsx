@@ -180,6 +180,10 @@ const recentProjects = [
         colors: "bg-cyan-500 text-black",
       },
       {
+        name: "BML Payment Gateway",
+        colors: "bg-red-500 text-black",
+      },
+      {
         name: "Amazon Web Services",
         colors: "bg-yellow-500 text-black",
       },
