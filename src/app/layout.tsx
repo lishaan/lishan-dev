@@ -3,6 +3,7 @@ import "./globals.css";
 import Backtop from "@/components/layout/backtop";
 import Navbar from "@/components/layout/navbar";
 import { Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 const font = Poppins({ subsets: ["latin"], weight: ["500"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <Toaster />
         <div className="h-full min-h-screen bg-custom bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 background-animate">
           <Navbar />
           {children}
