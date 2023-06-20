@@ -20,7 +20,12 @@ export default function Skills() {
         <div className="flex justify-center gap-2 mb-8">
           {categorizedSkills.map((categorizedSkill) => (
             <div
-              className="text-sm font-semibold text-zinc-200 cursor-pointer"
+              key={categorizedSkill.category}
+              className={`text-sm text-zinc-950 px-4 py-2 rounded hover:cursor-pointer hover:bg-yellow-200 focus:bg-zinc-200 transition ${
+                categorizedSkill.category === activeCategory.category
+                  ? "bg-yellow-300"
+                  : "bg-zinc-300"
+              }`}
               onClick={() => {
                 setActiveCategory(categorizedSkill);
               }}
@@ -33,12 +38,12 @@ export default function Skills() {
           className="flex flex-wrap justify-center h-[200px]"
           ref={skillsParent}
         >
-          {activeCategory.skills.map(({ name, level }) => (
+          {activeCategory.skills.map(({ name, level, color }) => (
             <div className="flex flex-col p-4 w-[200px]">
               <p className="text-xl mb-2">{name}</p>
               <div className="w-full rounded bg-zinc-600">
                 <div
-                  className="bg-yellow-300 text-xs font-medium h-3 text-center p-0.5 leading-none rounded"
+                  className={`${color} text-xs font-medium h-3 text-center p-0.5 leading-none rounded`}
                   style={{ width: `${level}%` }}
                 />
               </div>
@@ -56,18 +61,22 @@ const categorizedSkills = [
     skills: [
       {
         name: "React.js",
+        color: "bg-blue-500",
         level: 99,
       },
       {
         name: "Vue.js",
+        color: "bg-green-500",
         level: 75,
       },
       {
         name: "SASS",
+        color: "bg-pink-500",
         level: 99,
       },
       {
         name: "Tailwind CSS",
+        color: "bg-cyan-500",
         level: 85,
       },
     ],
@@ -77,14 +86,17 @@ const categorizedSkills = [
     skills: [
       {
         name: "Express.js",
+        color: "bg-purple-500",
         level: 99,
       },
       {
         name: "Flask Python",
+        color: "bg-yellow-500",
         level: 99,
       },
       {
         name: "ASP.NET Core",
+        color: "bg-indigo-500",
         level: 99,
       },
     ],
@@ -94,30 +106,37 @@ const categorizedSkills = [
     skills: [
       {
         name: "TypeScript",
+        color: "bg-blue-500",
         level: 99,
       },
       {
         name: "Python",
+        color: "bg-yellow-500",
         level: 99,
       },
       {
         name: "Java/Scala",
+        color: "bg-red-500",
         level: 99,
       },
       {
         name: "C++",
+        color: "bg-green-500",
         level: 99,
       },
       {
         name: "C#",
+        color: "bg-purple-500",
         level: 99,
       },
       {
         name: "Rust",
+        color: "bg-orange-500",
         level: 99,
       },
       {
         name: "PHP",
+        color: "bg-pink-500",
         level: 99,
       },
     ],
