@@ -114,18 +114,22 @@ export default function RecentProjects() {
         </div>
       </div>
       <div className="flex justify-center items-center gap-2 mt-6">
-        {scrollSnaps.map((_, index) => (
-          <button
-            key={index}
-            className={`w-2 h-2 rounded-full ${
-              index === selectedIndex ? "bg-zinc-500" : "bg-zinc-300"
-            }`}
-            aria-label={`Scroll to Project ${index + 1} out of ${
-              scrollSnaps.length
-            }`}
-            onClick={() => scrollTo(index)}
-          />
-        ))}
+        {scrollSnaps.map((_, index) => {
+          const activeColor = recentProjects[index].hoverColor.replace(
+            "group-hover:text",
+            "bg"
+          );
+          return (
+            <button
+              key={index}
+              className={`w-4 h-4 rounded-full ${
+                index === selectedIndex ? activeColor : "bg-zinc-300"
+              }`}
+              aria-hidden="true"
+              onClick={() => scrollTo(index)}
+            />
+          );
+        })}
       </div>
       <div className="flex items-center justify-center mt-6 gap-2">
         <button
@@ -179,7 +183,7 @@ const recentProjects = [
   {
     name: "Martline Maldives",
     url: "https://martline.com",
-    hoverColor: "group-hover:text-red-600",
+    hoverColor: "group-hover:text-red-500",
     description:
       "Martline is a wholesale online store in the Maldives. Wholesale customers can order products online and have them delivered to their offices anywhere in the Maldives.",
     image: "martline-preview.png",
