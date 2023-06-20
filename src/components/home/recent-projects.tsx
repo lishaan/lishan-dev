@@ -159,7 +159,8 @@ const recentProjects = [
     name: "Martline Maldives",
     url: "https://martline.com",
     hoverColor: "group-hover:text-red-600",
-    description: "Martline is a wholesale online store in the Maldives.",
+    description:
+      "Martline is a wholesale online store in the Maldives. Wholesale customers can order products online and have them delivered to their offices anywhere in the Maldives.",
     image: "martline-preview.png",
     technologies: [
       {
@@ -189,7 +190,7 @@ const recentProjects = [
     url: "https://seenco.cloud",
     hoverColor: "group-hover:text-blue-500",
     description:
-      "Seenco Cloud is a cloud-based platform that provides a suite of applications for Seenco's subsidiaries.",
+      "Seenco Cloud is a cloud-based platform that provides a suite of applications for Seenco Corporation PVT LTD's subsidiaries.",
     image: "seencocloud-preview.png",
     technologies: [
       {
