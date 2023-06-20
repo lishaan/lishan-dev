@@ -125,7 +125,9 @@ export default function RecentProjects() {
               className={`w-4 h-4 rounded-full ${
                 index === selectedIndex ? activeColor : "bg-zinc-300"
               }`}
-              aria-hidden="true"
+              aria-label={`Scroll to Project ${index + 1} out of ${
+                scrollSnaps.length
+              }`}
               onClick={() => scrollTo(index)}
             />
           );
