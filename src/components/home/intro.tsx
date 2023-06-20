@@ -12,7 +12,7 @@ export default function Intro() {
         alt="Avatar"
       />
       <p className="text-sm mt-6 text-zinc-300">
-        {"Hello there, my name is Lishan"}
+        {"Hello there, my name is Lishan!"}
       </p>
       <br />
       <h1 className="text-3xl md:text-5xl mt-4 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text">

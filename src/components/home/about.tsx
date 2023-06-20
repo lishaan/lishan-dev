@@ -7,7 +7,7 @@ export default function About() {
       <div className="max-w-4xl text-center text-md">
         <p className="mb-4">
           {
-            "I'm Lishan, a full stack developer with a passion for crafting custom web solutions. With a degree in BSc Computer Science, I have honed my skills in both front-end and back-end development."
+            "I am a full stack developer with a passion for crafting custom web solutions. With a degree in BSc Computer Science, I have honed my skills in both front-end and back-end development."
           }
         </p>
         <p className="mb-4">

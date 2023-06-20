@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useState } from "react";
 
@@ -14,10 +15,10 @@ export default function Skills() {
   return (
     <div className="flex flex-col justify-center items-center h-full min-h-screen p-8">
       <div className="max-w-4xl w-full text-center text-md">
-        <h3 className="text-5xl text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text my-12">
-          Skills
+        <h3 className="text-3xl md:text-4xl text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text my-12">
+          Web Development Skills
         </h3>
-        <div className="flex justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
           {categorizedSkills.map((categorizedSkill) => (
             <div
               key={categorizedSkill.category}
@@ -35,18 +36,22 @@ export default function Skills() {
           ))}
         </div>
         <div
-          className="flex flex-wrap justify-center h-[200px]"
+          className="flex flex-wrap justify-center items-start"
           ref={skillsParent}
         >
-          {activeCategory.skills.map(({ name, level, color }) => (
+          {activeCategory.skills.map(({ name, url, level, color }) => (
             <div key={name} className="flex flex-col p-4 w-[200px]">
-              <p className="text-xl mb-2">{name}</p>
-              <div className="w-full rounded bg-zinc-600">
-                <div
-                  className={`${color} text-xs font-medium h-3 text-center p-0.5 leading-none rounded`}
-                  style={{ width: `${level}%` }}
-                />
-              </div>
+              <Link className="group" href={url} target="_blank" rel="nofollow">
+                <p className="text-xl mb-2 group-hover:text-zinc-400 transition">
+                  {name}
+                </p>
+                <div className="w-full rounded bg-zinc-600 border-zinc-600 border-2">
+                  <div
+                    className={`${color} text-xs font-medium h-3 text-center p-0.5 leading-none rounded`}
+                    style={{ width: `${level}%` }}
+                  />
+                </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -61,23 +66,27 @@ const categorizedSkills = [
     skills: [
       {
         name: "React.js",
+        url: "https://reactjs.org/",
         color: "bg-blue-500",
-        level: 99,
-      },
-      {
-        name: "Vue.js",
-        color: "bg-green-500",
-        level: 75,
+        level: 100,
       },
       {
         name: "SASS",
+        url: "https://sass-lang.com/",
         color: "bg-pink-500",
-        level: 99,
+        level: 100,
       },
       {
         name: "Tailwind CSS",
+        url: "https://tailwindcss.com/",
         color: "bg-cyan-500",
         level: 85,
+      },
+      {
+        name: "Vue.js",
+        url: "https://vuejs.org/",
+        color: "bg-green-500",
+        level: 75,
       },
     ],
   },
@@ -86,18 +95,79 @@ const categorizedSkills = [
     skills: [
       {
         name: "Express.js",
+        url: "https://expressjs.com/",
         color: "bg-purple-500",
-        level: 99,
+        level: 100,
       },
       {
         name: "Flask Python",
+        url: "https://flask.palletsprojects.com/",
         color: "bg-yellow-500",
-        level: 99,
+        level: 100,
       },
       {
         name: "ASP.NET Core",
+        url: "https://dotnet.microsoft.com/apps/aspnet",
         color: "bg-indigo-500",
-        level: 99,
+        level: 80,
+      },
+    ],
+  },
+  {
+    category: "Full-stack",
+    skills: [
+      {
+        name: "Next.js",
+        url: "https://nextjs.org/",
+        color: "bg-black",
+        level: 100,
+      },
+      {
+        name: "Astro",
+        url: "https://astro.build/",
+        color: "bg-yellow-500",
+        level: 90,
+      },
+      {
+        name: "T3 Stack",
+        url: "https://create.t3.gg/",
+        color: "bg-cyan-500",
+        level: 80,
+      },
+      {
+        name: "ASP.NET Core",
+        url: "https://dotnet.microsoft.com/apps/aspnet",
+        color: "bg-indigo-500",
+        level: 80,
+      },
+    ],
+  },
+  {
+    category: "Databases",
+    skills: [
+      {
+        name: "PostgreSQL",
+        url: "https://www.postgresql.org/",
+        color: "bg-cyan-500",
+        level: 100,
+      },
+      {
+        name: "Firestore",
+        url: "https://firebase.google.com/docs/firestore",
+        color: "bg-yellow-500",
+        level: 90,
+      },
+      {
+        name: "MongoDB",
+        url: "https://www.mongodb.com/",
+        color: "bg-green-500",
+        level: 80,
+      },
+      {
+        name: "Redis",
+        url: "https://redis.io/",
+        color: "bg-red-500",
+        level: 70,
       },
     ],
   },
@@ -106,38 +176,27 @@ const categorizedSkills = [
     skills: [
       {
         name: "TypeScript",
+        url: "https://www.typescriptlang.org/",
         color: "bg-blue-500",
-        level: 99,
+        level: 100,
       },
       {
         name: "Python",
+        url: "https://www.python.org/",
         color: "bg-yellow-500",
-        level: 99,
-      },
-      {
-        name: "Java/Scala",
-        color: "bg-red-500",
-        level: 99,
-      },
-      {
-        name: "C++",
-        color: "bg-green-500",
-        level: 99,
+        level: 100,
       },
       {
         name: "C#",
+        url: "https://docs.microsoft.com/en-us/dotnet/csharp/",
         color: "bg-purple-500",
-        level: 99,
+        level: 90,
       },
       {
         name: "Rust",
+        url: "https://www.rust-lang.org/",
         color: "bg-orange-500",
-        level: 99,
-      },
-      {
-        name: "PHP",
-        color: "bg-pink-500",
-        level: 99,
+        level: 80,
       },
     ],
   },
