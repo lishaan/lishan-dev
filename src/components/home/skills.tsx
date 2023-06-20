@@ -39,7 +39,7 @@ export default function Skills() {
           ref={skillsParent}
         >
           {activeCategory.skills.map(({ name, level, color }) => (
-            <div className="flex flex-col p-4 w-[200px]">
+            <div key={name} className="flex flex-col p-4 w-[200px]">
               <p className="text-xl mb-2">{name}</p>
               <div className="w-full rounded bg-zinc-600">
                 <div
