@@ -108,7 +108,7 @@ const categorizedSkills = [
       {
         name: "Flask Python",
         url: "https://flask.palletsprojects.com/",
-        color: "bg-yellow-500",
+        color: "bg-cyan-500",
         level: 100,
       },
       {

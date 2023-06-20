@@ -119,6 +119,7 @@ export default function RecentProjects() {
             "group-hover:text",
             "bg"
           );
+
           return (
             <button
               key={index}
