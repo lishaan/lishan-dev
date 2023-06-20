@@ -7,8 +7,9 @@ import { Poppins } from "next/font/google";
 const font = Poppins({ subsets: ["latin"], weight: ["500"] });
 
 export const metadata = {
-  title: "lishan.dev | Home",
-  description: "Building the Web, One Line at a Time",
+  title: "lishan.dev | Building the Web, One Line at a Time",
+  description:
+    "Full-stack developer from the Maldives. 5+ years of experience crafting custom web solutions. Expertise in front-end & back-end. Contact for inquiries.",
 };
 
 export default function RootLayout({

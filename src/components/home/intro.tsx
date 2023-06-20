@@ -1,14 +1,16 @@
 import Image from "next/image";
+import { loader } from "@/lib/utils";
 
 export default function Intro() {
   return (
     <section className="flex flex-col justify-center items-center h-full min-h-[calc(100vh-88px)] p-8">
       <Image
-        src="/avatar.jpg"
-        className="rounded-full"
-        height={128}
-        width={128}
-        unoptimized
+        src="avatar.jpg"
+        className="rounded-full w-32"
+        width={256}
+        height={256}
+        priority
+        loader={loader}
         alt="Avatar"
       />
       <h1 className="text-sm mt-6 text-zinc-300">
