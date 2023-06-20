@@ -11,15 +11,16 @@ export default function Intro() {
         unoptimized
         alt="Avatar"
       />
-      <p className="text-sm mt-6 text-zinc-300">
+      <h1 className="text-sm mt-6 text-zinc-300">
         {"Hello there, my name is Lishan!"}
-      </p>
-      <br />
-      <h1 className="text-3xl md:text-5xl mt-4 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent pb-2 from-yellow-300 via-red-300 to-yellow-300 animate-text">
-        Building the Web
-        <br />
-        One Line at a Time
       </h1>
+      <br />
+      <p className="text-2xl md:text-4xl mt-4 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent pb-2 from-yellow-300 via-red-300 to-yellow-300 animate-text">
+        Building the Web
+      </p>
+      <p className="text-3xl md:text-5xl mt-4 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent pb-2 from-yellow-300 via-red-300 to-yellow-300 animate-text">
+        One Line at a Time
+      </p>
     </section>
   );
 }

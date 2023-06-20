@@ -1,6 +1,7 @@
 import "./globals.css";
 
-import Navbar from "@/components/navbar";
+import Backtop from "@/components/layout/backtop";
+import Navbar from "@/components/layout/navbar";
 import { Poppins } from "next/font/google";
 
 const font = Poppins({ subsets: ["latin"], weight: ["500"] });
@@ -22,6 +23,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </div>
+        <Backtop />
       </body>
     </html>
   );

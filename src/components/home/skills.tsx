@@ -15,9 +15,9 @@ export default function Skills() {
   return (
     <section className="flex flex-col justify-center items-center h-full min-h-screen p-8">
       <div className="max-w-4xl w-full text-center text-md">
-        <h3 className="text-3xl md:text-4xl text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text my-10 pb-2">
+        <h2 className="text-3xl md:text-4xl text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text my-10 pb-2">
           Web Development Skills
-        </h3>
+        </h2>
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {categorizedSkills.map((categorizedSkill) => (
             <div
