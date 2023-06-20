@@ -11,7 +11,7 @@ import { loader } from "@/lib/utils";
 
 export default function RecentProjects() {
   const [emblaRef, emblaApi] = useEmblaCarousel({}, [
-    Autoplay({ delay: 5000, stopOnMouseEnter: true }),
+    Autoplay({ delay: 15000, stopOnMouseEnter: true }),
   ]);
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
