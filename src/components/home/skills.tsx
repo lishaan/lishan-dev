@@ -106,6 +106,12 @@ const categorizedSkills = [
         level: 100,
       },
       {
+        name: "Firebase",
+        url: "https://firebase.google.com/",
+        color: "bg-yellow-500",
+        level: 100,
+      },
+      {
         name: "ASP.NET Core",
         url: "https://dotnet.microsoft.com/apps/aspnet",
         color: "bg-indigo-500",
