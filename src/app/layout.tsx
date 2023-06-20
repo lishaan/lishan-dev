@@ -34,14 +34,14 @@ export default function RootLayout({
             <div className="flex self-end gap-4">
               <Link
                 href="mailto:lishan.dev@outlook.com"
-                className="flex gap-2 items-center hover:underline"
+                className="flex gap-2 items-center hover:underline hover:text-yellow-300 transition"
               >
                 <Mail />
               </Link>
               <Link
                 href="https://github.com/Lishaan"
                 target="_blank"
-                className="flex gap-2 items-center hover:underline"
+                className="flex gap-2 items-center hover:underline hover:text-yellow-300 transition"
               >
                 <GithubIcon />
               </Link>
