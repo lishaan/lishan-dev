@@ -73,13 +73,14 @@ export default function RecentProjects() {
                         width={512}
                         height={256}
                         loader={loader}
-                        alt="Martline Preview"
+                        alt={`Preview of ${name}`}
                       />
                       <Link
                         href={url}
                         target="_blank"
                         rel="nofollow"
                         className="flex items-center justify-center gap-2 mb-2 group max-w-fit-content"
+                        aria-label={`${name} Link`}
                       >
                         <p
                           className={`text-2xl text-center text-zinc-100 ${hoverColor} transition`}
@@ -118,6 +119,9 @@ export default function RecentProjects() {
             key={index}
             className={`w-2 h-2 rounded-full ${
               index === selectedIndex ? "bg-zinc-500" : "bg-zinc-300"
+            }`}
+            aria-label={`Scroll to Project ${index + 1} out of ${
+              scrollSnaps.length
             }`}
             onClick={() => scrollTo(index)}
           />

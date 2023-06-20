@@ -41,7 +41,13 @@ export default function Skills() {
         >
           {activeCategory.skills.map(({ name, url, level, color }) => (
             <div key={name} className="flex flex-col p-4 w-[200px]">
-              <Link className="group" href={url} target="_blank" rel="nofollow">
+              <Link
+                className="group"
+                href={url}
+                target="_blank"
+                rel="nofollow"
+                aria-label={`Go to ${name}'s Website`}
+              >
                 <p className="text-xl mb-2 group-hover:text-zinc-400 transition">
                   {name}
                 </p>

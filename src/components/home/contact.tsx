@@ -98,6 +98,7 @@ export default function Contact() {
           <Link
             href="mailto:lishan.dev@outlook.com"
             className="text-yellow-300 hover:text-yellow-400 transition"
+            aria-label="Email Link"
           >
             lishan.dev@outlook.com
           </Link>
@@ -156,6 +157,7 @@ export default function Contact() {
           className="bg-zinc-600 border-zinc-600 border-2 rounded p-2 hover:bg-yellow-300 hover:text-zinc-950 duration-300 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent mt-4 disabled:opacity-50 disabled:cursor-not-allowed transition"
           onClick={sendEmail}
           disabled={isSending}
+          aria-label="Send Email"
         >
           Send
         </button>

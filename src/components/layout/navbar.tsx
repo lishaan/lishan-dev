@@ -8,6 +8,7 @@ export default function Navbar() {
       <Link
         href="mailto:lishan.dev@outlook.com"
         className="flex gap-2 items-center hover:underline hover:text-yellow-300 transition"
+        aria-label="Email Link"
       >
         <Mail />
       </Link>
@@ -19,6 +20,7 @@ export default function Navbar() {
           href="https://github.com/Lishaan"
           target="_blank"
           className="flex gap-2 items-center hover:underline hover:text-yellow-300 transition"
+          aria-label="Github Link"
         >
           <GithubIcon />
         </Link>
