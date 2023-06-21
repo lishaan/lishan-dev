@@ -7,9 +7,9 @@ import Link from "next/link";
 export default function Navbar() {
   function scrollToContact() {
     const element = document.getElementById("contact")!;
-
     element.scrollIntoView({ behavior: "smooth" });
   }
+
   return (
     <nav className="flex justify-between items-center px-6 py-8 bg-transparent w-full top-0 max-w-4xl mx-auto">
       <Link
