@@ -100,6 +100,7 @@ export default function Contact() {
           {"Fill out the form below or send me a direct email at "}
           <Link
             href="mailto:lishan.dev@outlook.com"
+            target="_blank"
             className="text-yellow-300 hover:text-yellow-400 transition"
             aria-label="Email Link"
           >
