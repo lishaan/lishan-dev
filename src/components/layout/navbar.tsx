@@ -12,7 +12,9 @@ export default function Navbar() {
       >
         <Mail />
       </Link>
-      <span className="text-md font-semibold text-gradient">lishan.dev</span>
+      <Link href="/" className="text-md font-semibold text-gradient">
+        lishan.dev
+      </Link>
       <div className="flex self-end gap-4">
         <Link
           href="https://github.com/Lishaan"
