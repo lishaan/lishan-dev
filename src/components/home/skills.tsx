@@ -27,6 +27,7 @@ export default function Skills() {
           href="/Resume - Lishan.pdf"
           target="_blank"
           download
+          aria-label="Download Resume"
           className="text-sm text-zinc-950 px-4 py-2 rounded bg-zinc-100 hover:cursor-pointer hover:bg-yellow-300 focus:bg-yellow-300 transition"
         >
           Download Resume
