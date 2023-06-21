@@ -12,9 +12,7 @@ export default function Navbar() {
       >
         <Mail />
       </Link>
-      <span className="text-md font-semibold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text">
-        lishan.dev
-      </span>
+      <span className="text-md font-semibold text-gradient">lishan.dev</span>
       <div className="flex self-end gap-4">
         <Link
           href="https://github.com/Lishaan"

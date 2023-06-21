@@ -29,6 +29,10 @@ body {
   color: #27272a;
 }
 
+.text-gradient {
+  @apply bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text;
+}
+
 .bg-custom {
   background-size: 400%;
   animation: bg-animate 10s ease infinite;

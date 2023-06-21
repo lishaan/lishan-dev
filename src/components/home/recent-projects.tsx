@@ -56,7 +56,7 @@ export default function RecentProjects() {
 
   return (
     <section className="md:flex md:flex-col md:justify-center md:items-center h-full min-h-screen p-8 bg-zinc-950">
-      <h2 className="text-3xl md:text-4xl pb-2 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text mb-12">
+      <h2 className="text-3xl md:text-4xl pb-2 text-center font-bold text-gradient mb-12">
         Recent Projects
       </h2>
       <div className="overflow-hidden" ref={emblaRef}>
