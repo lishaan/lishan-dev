@@ -1,8 +1,3 @@
-export const metadata = {
-  title: "lishan.dev | Page Not Found",
-  description: "This page does not exist.",
-};
-
 export default function NotFound() {
   return (
     <main className="h-full min-h-screen">
