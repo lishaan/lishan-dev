@@ -19,9 +19,9 @@ export default function Skills() {
           Resume
         </h2>
         <p className="mx-auto max-w-xl mb-10">
-          Download the complete resume for a detailed overview or connect with
-          me to discuss potential opportunities. Take a closer look at my
-          qualifications and let's explore possibilities together.
+          {
+            "Download the complete resume for a detailed overview or connect with me to discuss potential opportunities. Take a closer look at my qualifications and let's explore possibilities together."
+          }
         </p>
         <Link
           href="/Resume - Lishan.pdf"
