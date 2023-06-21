@@ -159,11 +159,11 @@ export default function RecentProjects() {
 
 const recentProjects = [
   {
-    name: "Ereyvi Maldives",
+    name: "Ereyvi",
     url: "https://preview.ereyvi.com",
     hoverColor: "group-hover:text-orange-500",
     description:
-      "Ereyvi Maldives is a go-to destination for unique and tailored gifts. Customers can order personalized gifts for their loved ones online.",
+      "Ereyvi is a go-to destination for unique and tailored gifts. Customers can order personalized gifts for their loved ones online.",
     image: "ereyvi-preview.png",
     technologies: [
       {
@@ -185,7 +185,7 @@ const recentProjects = [
     ],
   },
   {
-    name: "Martline Maldives",
+    name: "Martline",
     url: "https://martline.com",
     hoverColor: "group-hover:text-red-500",
     description:
@@ -271,7 +271,7 @@ const recentProjects = [
     ],
   },
   {
-    name: "AirForLife Malaysia",
+    name: "Air for Life Malaysia",
     url: "https://airforlife.my",
     hoverColor: "group-hover:text-blue-500",
     description:
