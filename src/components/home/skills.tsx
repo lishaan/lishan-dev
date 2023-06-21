@@ -15,7 +15,23 @@ export default function Skills() {
   return (
     <section className="flex flex-col justify-center items-center h-full min-h-screen p-8">
       <div className="max-w-4xl w-full text-center text-md">
-        <h2 className="text-3xl md:text-4xl text-center font-bold bg-gradient-to-r bg-clip-text text-transparent from-yellow-300 via-red-300 to-yellow-300 animate-text my-10 pb-2">
+        <h2 className="text-3xl md:text-4xl text-center font-bold text-gradient py-10">
+          Resume
+        </h2>
+        <p className="mx-auto max-w-xl mb-10">
+          Download the complete resume for a detailed overview or connect with
+          me to discuss potential opportunities. Take a closer look at my
+          qualifications and let's explore possibilities together.
+        </p>
+        <Link
+          href="/Resume - Lishan.pdf"
+          target="_blank"
+          download
+          className="text-sm text-zinc-950 px-4 py-2 rounded bg-zinc-100 hover:cursor-pointer hover:bg-yellow-300 focus:bg-yellow-300 transition"
+        >
+          Download Resume
+        </Link>
+        <h2 className="text-3xl md:text-4xl text-center font-bold text-gradient pt-16 pb-10">
           Web Development Skills
         </h2>
         <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -28,7 +44,8 @@ export default function Skills() {
                   : "bg-zinc-300"
               }`}
               aria-label={`Change Category to ${categorizedSkill.category}}`}
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 setActiveCategory(categorizedSkill);
               }}
             >
@@ -37,7 +54,7 @@ export default function Skills() {
           ))}
         </div>
         <div
-          className="flex flex-wrap justify-center items-start"
+          className="flex flex-wrap justify-center items-start min-h-[200px]"
           ref={skillsParent}
         >
           {activeCategory.skills.map(({ name, url, level, color }) => (
