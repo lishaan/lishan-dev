@@ -1,4 +1,3 @@
-import { MdxContent } from "@/lib/mdx-content";
 import { promises as fs } from "fs";
 import { serialize } from "next-mdx-remote/serialize";
 
@@ -13,18 +12,18 @@ export default async function PostPage({ params }: PageProps) {
   //   notFound();
   // }
 
-  const { serialized, frontmatter } = post;
+  const { frontmatter } = post;
 
   return (
     <article className="max-w-5xl mx-auto">
       <h1>{frontmatter.title}</h1>
       <p>Published {frontmatter.date}</p>
-      <MdxContent source={serialized} />
+      {/* <MdxContent source={serialized} /> */}
     </article>
   );
 }
 
-async function getPost(slug: string): Promise<Post> {
+async function getPost(slug: string): Promise<PostWithSlug> {
   const raw = await fs.readFile(`src/content/${slug}.mdx`, "utf-8");
 
   const serialized = await serialize(raw, {
@@ -35,6 +34,6 @@ async function getPost(slug: string): Promise<Post> {
 
   return {
     frontmatter,
-    serialized,
+    slug,
   };
 }
