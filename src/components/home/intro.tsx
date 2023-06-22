@@ -13,14 +13,14 @@ export default function Intro() {
         loader={loader}
         alt="Avatar"
       />
-      <h1 className="text-sm mt-6 text-zinc-300">
+      <h1 className="text-sm text-center mt-6 text-zinc-300">
         {"Hello there, my name is Lishan!"}
       </h1>
       <br />
-      <p className="text-2xl md:text-4xl mt-4 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent pb-2 from-yellow-300 via-red-300 to-yellow-300 animate-text">
+      <p className="text-xl sm:text-2xl md:text-4xl mt-4 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent pb-2 from-yellow-300 via-red-300 to-yellow-300 animate-text">
         Building the Web
       </p>
-      <p className="text-3xl md:text-5xl mt-4 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent pb-2 from-yellow-300 via-red-300 to-yellow-300 animate-text">
+      <p className="text-2xl sm:text-3xl md:text-5xl sm:mt-1 md:mt-4 text-center font-bold bg-gradient-to-r bg-clip-text text-transparent pb-2 from-yellow-300 via-red-300 to-yellow-300 animate-text">
         One Line at a Time
       </p>
     </section>

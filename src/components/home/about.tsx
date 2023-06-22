@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section className="flex flex-col justify-center items-center h-full min-h-screen p-8 bg-zinc-950">
-      <h2 className="text-4xl md:text-5xl text-center font-bold text-gradient mb-10 pb-2">
+      <h2 className="text-4xl md:text-5xl text-center font-bold text-gradient mt-5 mb-10">
         About
       </h2>
       <div className="max-w-4xl text-center text-md">
