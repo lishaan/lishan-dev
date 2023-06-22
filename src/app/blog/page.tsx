@@ -13,8 +13,8 @@ export default async function PostsPage() {
       {posts.map((post, key) => (
         <Link key={key} href={`blog/${post.slug}`}>
           <div className="flex justify-between">
-            <h1 className="text-zinc-400 text-bold text-xl hover:text-gradient">
-              {key + 1}. {post.frontmatter.title}
+            <h1 className="text-zinc-400 text-bold text-xl sm:text-lg hover:text-gradient">
+              {post.frontmatter.title}
             </h1>
             <p className="bg-zinc-500 rounded px-2 py-1">
               {post.frontmatter.date}
