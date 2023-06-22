@@ -7,7 +7,7 @@ type PageProps = {
   params: { slug: string };
 };
 
-export default async function Post({ params }: PageProps) {
+export default async function PostPage({ params }: PageProps) {
   const post = await getPost(params.slug);
 
   if (!post) {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { promises as fs } from "fs";
 import { serialize } from "next-mdx-remote/serialize";
 
-export default async function Posts() {
+export default async function PostsPage() {
   const posts = await getPosts();
 
   return (

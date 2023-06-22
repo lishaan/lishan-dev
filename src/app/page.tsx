@@ -4,7 +4,7 @@ import Intro from "@/components/home/intro";
 import RecentProjects from "@/components/home/recent-projects";
 import Skills from "@/components/home/skills";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="h-full min-h-screen">
       <Intro />
