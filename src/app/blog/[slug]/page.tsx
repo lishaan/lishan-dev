@@ -1,4 +1,5 @@
 import { promises as fs } from "fs";
+import { notFound } from "next/navigation";
 import { serialize } from "next-mdx-remote/serialize";
 
 type PageProps = {
@@ -8,9 +9,9 @@ type PageProps = {
 export default async function PostPage({ params }: PageProps) {
   const post = await getPost(params.slug);
 
-  // if (!post) {
-  //   notFound();
-  // }
+  if (!post) {
+    notFound();
+  }
 
   const { frontmatter } = post;
 
@@ -23,17 +24,36 @@ export default async function PostPage({ params }: PageProps) {
   );
 }
 
-async function getPost(slug: string): Promise<PostWithSlug> {
-  const raw = await fs.readFile(`src/content/${slug}.mdx`, "utf-8");
+async function getPost(slug: string): Promise<Post | null> {
+  const posts = [];
+  const rawFiles = await fs.readdir("src/content", "utf-8");
 
-  const serialized = await serialize(raw, {
-    parseFrontmatter: true,
-  });
+  for (const file of rawFiles) {
+    if (file.endsWith(".mdx")) {
+      const raw = await fs.readFile(`src/content/${file}`, "utf-8");
 
-  const frontmatter = serialized.frontmatter as Frontmatter;
+      const serialized = await serialize(raw, {
+        parseFrontmatter: true,
+      });
 
-  return {
-    frontmatter,
-    slug,
-  };
+      const frontmatter = serialized.frontmatter as Frontmatter;
+
+      posts.push({
+        frontmatter,
+        serialized,
+        slug: file.replace(".mdx", ""),
+      });
+    }
+  }
+
+  const post = posts.find((post) => post.slug === slug);
+
+  if (post) {
+    return {
+      frontmatter: post.frontmatter,
+      serialized: post.serialized,
+    };
+  } else {
+    return null;
+  }
 }

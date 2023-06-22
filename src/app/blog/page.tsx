@@ -42,6 +42,7 @@ async function getPosts(): Promise<PostWithSlug[]> {
 
       posts.push({
         frontmatter,
+        serialized,
         slug: file.replace(".mdx", ""),
       });
     }

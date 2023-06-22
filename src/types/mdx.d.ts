@@ -8,7 +8,6 @@ type Post = {
   frontmatter: Frontmatter;
 };
 
-type PostWithSlug = {
+type PostWithSlug = Post & {
   slug: string;
-  frontmatter: Frontmatter;
 };
