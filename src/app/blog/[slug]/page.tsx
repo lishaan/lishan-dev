@@ -39,7 +39,8 @@ async function getPost(slug: string): Promise<Post | null> {
       frontmatter,
       serialized,
     };
-  } catch {
+  } catch (error) {
+    console.error(error);
     return null;
   }
 }
