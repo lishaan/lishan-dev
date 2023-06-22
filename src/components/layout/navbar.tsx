@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const links = [
-  { href: "/blog", label: "Blog" },
+  // { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
   { href: "https://github.com/Lishaan", label: "Github", external: true },
 ];
@@ -15,14 +14,6 @@ const links = [
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    if (showMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [showMenu]);
 
   return (
     <nav className="flex justify-between items-center p-6 md:py-8 bg-transparent w-full top-0 max-w-4xl mx-auto">
