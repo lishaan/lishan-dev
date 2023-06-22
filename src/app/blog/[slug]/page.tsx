@@ -1,6 +1,5 @@
 import { MdxContent } from "@/lib/mdx-content";
 import { promises as fs } from "fs";
-import { notFound } from "next/navigation";
 import { serialize } from "next-mdx-remote/serialize";
 
 type PageProps = {
@@ -10,9 +9,9 @@ type PageProps = {
 export default async function PostPage({ params }: PageProps) {
   const post = await getPost(params.slug);
 
-  if (!post) {
-    notFound();
-  }
+  // if (!post) {
+  //   notFound();
+  // }
 
   const { serialized, frontmatter } = post;
 
@@ -25,22 +24,17 @@ export default async function PostPage({ params }: PageProps) {
   );
 }
 
-async function getPost(slug: string): Promise<Post | null> {
-  try {
-    const raw = await fs.readFile(`src/content/${slug}.mdx`, "utf-8");
+async function getPost(slug: string): Promise<Post> {
+  const raw = await fs.readFile(`src/content/${slug}.mdx`, "utf-8");
 
-    const serialized = await serialize(raw, {
-      parseFrontmatter: true,
-    });
+  const serialized = await serialize(raw, {
+    parseFrontmatter: true,
+  });
 
-    const frontmatter = serialized.frontmatter as Frontmatter;
+  const frontmatter = serialized.frontmatter as Frontmatter;
 
-    return {
-      frontmatter,
-      serialized,
-    };
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
+  return {
+    frontmatter,
+    serialized,
+  };
 }
