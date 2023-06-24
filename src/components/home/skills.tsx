@@ -24,7 +24,7 @@ export default function Skills() {
           }
         </p>
         <Link
-          href="/Resume - Lishan.pdf"
+          href="/documents/Resume - Lishan.pdf"
           target="_blank"
           download
           aria-label="Download Resume"
