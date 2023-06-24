@@ -108,7 +108,7 @@ export const metadata: Metadata = {
       type: "image/png",
     },
   },
-  manifest: "/assets/site.webmanifest",
+  manifest: "/site.webmanifest",
 
   robots: {
     index: true,
