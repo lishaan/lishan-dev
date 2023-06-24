@@ -189,7 +189,7 @@ const recentProjects = [
     url: "https://martline.com",
     hoverColor: "group-hover:text-red-500",
     description:
-      "Martline is a wholesale online store in the Maldives. Wholesale customers can order products online and have them delivered to their offices anywhere in the Maldives.",
+      "Martline is a wholesale online store in the Maldives. Customers can order products online and have them delivered to their offices anywhere in the Maldives.",
     image: "martline-preview.png",
     technologies: [
       {
@@ -253,7 +253,7 @@ const recentProjects = [
     url: "https://ixy.mv",
     hoverColor: "group-hover:text-cyan-500",
     description:
-      "Ixy is Maldives' best mobility solution. Ixy provides transportation solutions for your every need in the Maldives.",
+      "Landing page for Ixy. Ixy provides transportation solutions for your every need in the Maldives.",
     image: "ixy-preview.png",
     technologies: [
       {

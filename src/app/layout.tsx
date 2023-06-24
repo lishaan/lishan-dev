@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
   title,
   description,
-  category: "Software Development",
+  category: "Web Development",
   keywords: [
     "lishan",
     "dev",

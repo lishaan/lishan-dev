@@ -23,7 +23,7 @@ export default function Backtop() {
 
   return (
     <div
-      className={`fixed bottom-3 left-3 z-50 transition-opacity duration-300 ${
+      className={`fixed bottom-3 right-3 z-50 transition-opacity duration-300 ${
         show ? "opacity-100" : "opacity-0"
       }`}
     >

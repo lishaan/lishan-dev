@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { send } from "@emailjs/browser";
 import toast from "react-hot-toast";
+import { toastOptions } from "@/lib/utils";
 import { useState } from "react";
 
 export default function Contact() {
@@ -20,15 +21,10 @@ export default function Contact() {
   async function sendEmail() {
     setSending(true);
 
-    const templateParams = {
-      name,
-      email,
-      message,
-    };
-
     try {
+      // Form validation
       if (!name || !email || !message) {
-        throw new Error("Please fill in all fields!");
+        throw new Error("Please fill out all fields!");
       }
 
       const emailRegex = /\S+@\S+\.\S+/;
@@ -45,40 +41,34 @@ export default function Contact() {
         throw new Error("Your message should be at least 20 characters long");
       }
 
-      await toast.promise(
-        send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-          templateParams,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-        ),
-        {
-          loading: "Sending Email...",
-          success: <b>Email sent!</b>,
-          error: (
-            <b>{"Couldn't send email. Please contact me directly instead."}</b>
-          ),
-        },
-        {
-          style: {
-            borderRadius: "6px",
-            background: "#27272a",
-            color: "#fafafa",
-          },
-        }
-      );
+      // EmailJS Params setup
+      const templateParams = {
+        name,
+        email,
+        message,
+      };
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      // Toast setup
+      const promise = send(serviceId, templateId, templateParams, publicKey);
+      const messages = {
+        loading: "Sending message...",
+        success: "Message sent!",
+        error: "Couldn't send message. Please contact me directly instead.",
+      };
+
+      // Send email
+      await toast.promise(promise, messages, toastOptions);
+
       setName("");
       setEmail("");
       setMessage("");
     } catch (_error) {
       const error = _error as Error;
-      toast.error(error.message, {
-        style: {
-          borderRadius: "6px",
-          background: "#27272a",
-          color: "#fafafa",
-        },
-      });
+
+      toast.error(error.message, toastOptions);
     } finally {
       setSending(false);
     }
@@ -109,7 +99,6 @@ export default function Contact() {
           {"."}
         </p>
       </div>
-      {/* message form with styled inputs and buttons using tailwind */}
       <form className="flex flex-col max-w-md w-full text-md mt-8">
         <div className="flex flex-col">
           <label htmlFor="name" className="text-zinc-300 mb-2">
