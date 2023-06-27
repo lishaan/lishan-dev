@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 body {
-  /* zinc-50 */
-  color: rgb(250, 250, 250);
+  color: theme(textColor.zinc.50);
 
   /* yellow-300 */
   -webkit-tap-highlight-color: rgba(253, 224, 71, 0.5);
@@ -17,16 +16,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #27272a;
+  background-color: theme(backgroundColor.zinc.800);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3f3f46;
+  background-color: theme(backgroundColor.zinc.700);
 }
 
 ::selection {
-  background-color: #fde047;
-  color: #27272a;
+  background-color: theme(backgroundColor.yellow.300);
+  color: theme(textColor.zinc.800);
 }
 
 .text-gradient {
