@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, LinkIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, Globe } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel, { EmblaCarouselType } from "embla-carousel-react";
 
@@ -67,31 +67,33 @@ export default function RecentProjects() {
                 <div key={name} className="flex-[0_0_100%] m-w-0">
                   <div className="flex mx-auto max-w-4xl">
                     <div className="flex flex-col mx-auto">
-                      <Image
-                        priority
-                        src={image}
-                        className="w-full rounded-lg mx-auto max-w-[512px] mb-4 border-2 border-zinc-700"
-                        width={512}
-                        height={256}
-                        loader={loader}
-                        alt={`Preview of ${name}`}
-                      />
                       <Link
                         href={url}
                         target="_blank"
                         rel="nofollow"
-                        className="flex items-center justify-center gap-2 mb-2 group max-w-fit-content"
+                        className="flex flex-col w-full items-center justify-center gap-2 mb-2 group max-w-fit-content"
                         aria-label={`${name} Link`}
                       >
-                        <p
-                          className={`text-2xl text-center text-zinc-100 ${hoverColor} transition`}
-                        >
-                          {name}
-                        </p>
-                        <LinkIcon
-                          size="18"
-                          className={`text-zinc-100 ${hoverColor} transition`}
+                        <Image
+                          priority
+                          src={image}
+                          className="w-full rounded-lg mx-auto max-w-[512px] border-2 border-zinc-700 group-hover:opacity-80 group-hover:bg-yellow-500 transition"
+                          width={512}
+                          height={256}
+                          loader={loader}
+                          alt={`Preview of ${name}`}
                         />
+                        <div className="flex items-center gap-2">
+                          <Globe
+                            size="18"
+                            className={`text-zinc-100 ${hoverColor} transition`}
+                          />
+                          <p
+                            className={`text-2xl text-center text-zinc-100 ${hoverColor} transition`}
+                          >
+                            {name}
+                          </p>
+                        </div>
                       </Link>
                       <p className="text-sm text-center mx-auto max-w-lg">
                         {description}
@@ -100,7 +102,7 @@ export default function RecentProjects() {
                         {technologies.map(({ name, colors }) => (
                           <div
                             key={name}
-                            className={`text-xs px-2 py-1 rounded ${colors}`}
+                            className={`text-xs px-2 py-1 rounded ${colors} ${hoverColor} transition`}
                           >
                             {name}
                           </div>
