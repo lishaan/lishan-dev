@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between items-center px-6 py-8 bg-transparent w-full top-0 max-w-4xl mx-auto">
       <Link
-        href="https://github.com/Lishaan"
+        href="https://github.com/lishaan"
         target="_blank"
         className="flex gap-2 items-center hover:underline hover:text-yellow-300 transition"
         aria-label="Github Link"
